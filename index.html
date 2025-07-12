@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Clicker - Uzay İmparatorluğu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="game-header">
+            <div class="header-content">
+                <h1 class="game-title">
+                    <span class="title-icon">🚀</span>
+                    GALACTIC CLICKER
+                    <span class="title-icon">🌌</span>
+                </h1>
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <span class="stat-label">Kozmik Enerji</span>
+                        <span class="stat-value" id="cosmic-energy">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Saniyede</span>
+                        <span class="stat-value" id="energy-per-second">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Prestij Seviyesi</span>
+                        <span class="stat-value" id="prestige-level">0</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <main class="game-main">
+            <!-- Left Panel - Clicker Area -->
+            <section class="clicker-section">
+                <div class="planet-container">
+                    <div class="current-planet" id="current-planet">
+                        <h3 class="planet-name">Mars Kolonisi</h3>
+                        <div class="planet-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="planet-progress"></div>
+                            </div>
+                            <span class="progress-text" id="planet-progress-text">0 / 5,000 KE</span>
+                        </div>
+                    </div>
+                    
+                    <div class="clicker-area">
+                        <button class="main-clicker" id="main-clicker">
+                            <div class="clicker-planet">🪐</div>
+                            <div class="click-effect" id="click-effect"></div>
+                        </button>
+                        <div class="click-value" id="click-value">+1 KE</div>
+                    </div>
+
+                    <div class="alien-friends">
+                        <h4>Uzaylı Dostlar</h4>
+                        <div class="alien-buttons">
+                            <button class="alien-btn green-alien" id="green-alien">
+                                👽 Yeşil Uzaylı<br>
+                                <small>x2 KE (30s)</small>
+                            </button>
+                            <button class="alien-btn blue-alien" id="blue-alien">
+                                🛸 Mavi Uzaylı<br>
+                                <small>+50% Pasif (1h)</small>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Center Panel - Upgrades -->
+            <section class="upgrades-section">
+                <div class="section-header">
+                    <h2>🔧 Yükseltmeler</h2>
+                </div>
+                <div class="upgrades-container" id="upgrades-container">
+                    <!-- Upgrades will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Right Panel - Generators -->
+            <section class="generators-section">
+                <div class="section-header">
+                    <h2>⚡ Otomatik Üreticiler</h2>
+                </div>
+                <div class="generators-container" id="generators-container">
+                    <!-- Generators will be populated by JavaScript -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Bottom Panel - Achievements & Prestige -->
+        <footer class="game-footer">
+            <div class="achievements-panel">
+                <h3>🏆 Başarımlar</h3>
+                <div class="achievements-grid" id="achievements-grid">
+                    <!-- Achievements will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="prestige-panel">
+                <button class="prestige-btn" id="prestige-btn" disabled>
+                    🌟 Galaktik Reset
+                    <small>10,000 KE gerekli</small>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Floating Numbers -->
+    <div class="floating-numbers" id="floating-numbers"></div>
+
+    <!-- Modals -->
+    <div class="modal" id="prestige-modal">
+        <div class="modal-content">
+            <h2>🌟 Galaktik Reset</h2>
+            <p>Tüm ilerlemenizi sıfırlayarak yeni bir galakside başlayacaksınız.</p>
+            <div class="prestige-benefits">
+                <h3>Kazanacağınız Bonuslar:</h3>
+                <ul>
+                    <li>+10% Kalıcı Pasif Gelir Artışı</li>
+                    <li>Yeni Prestij Yükseltmeleri</li>
+                    <li>Gelişmiş Uzaylı Dostlar</li>
+                </ul>
+            </div>
+            <div class="modal-buttons">
+                <button class="btn-confirm" id="confirm-prestige">Reset Yap</button>
+                <button class="btn-cancel" id="cancel-prestige">İptal</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
